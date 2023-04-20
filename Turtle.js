@@ -3,12 +3,14 @@ let aquarium = document.getElementById("aquarium")
 
 let turtle = new RealTurtle.default(aquarium, {autoStart: true})
 
-turtle.setStrokeColorRGB(250,200,255)
-turtle.setFillStyle('yellow')
+turtle.setStrokeColorRGB(255,255,0)
+turtle.setFillStyle('blue')
 
 turtle.setPosition(200, 20)
 
+
 turtle.beginPath()
+turtle.setFillStyle('yellow')
 turtle.arc(20, 360)
 turtle.closePath()
 turtle.fill()
@@ -16,6 +18,7 @@ turtle.fill()
 turtle.setPosition(150,150)
 
 turtle.beginPath()
+turtle.setFillStyle('blue')
 
     turtle.forward(50)
     turtle.right(90)
@@ -49,6 +52,57 @@ turtle.right(40)
 turtle.forward(50)
 turtle.right(90)
 turtle.forward(10)
+
+turtle.closePath()
+
+turtle.beginPath()
+
+turtle.right(90)
+turtle.forward(20)
+turtle.left(90)
+turtle.forward(10)
+turtle.left(90)
+turtle.forward(20)
+turtle.left(90)
+turtle.forward(10)
+
+turtle.closePath()
+turtle.fill()
+
+turtle.beginPath()
+
+turtle.forward(10)
+turtle.left(90)
+turtle.forward(25)
+turtle.left(90)
+
+turtle.closePath()
+
+turtle.setFillStyle('green')
+turtle.beginPath()
+
+for(let i = 0; i < 4; i++) {
+    turtle.forward(10)
+    turtle.right(90)
+}
+
+turtle.closePath()
+turtle.fill()
+
+turtle.forward(20)
+
+turtle.setFillStyle('green')
+turtle.beginPath()
+
+for(let i = 0; i < 4; i++) {
+    turtle.forward(10)
+    turtle.right(90)
+}
+
+turtle.forward(200)
+
+turtle.closePath()
+turtle.fill()
 
 //for (let i = 0; i < 4; i++) {
   //  turtle.forward(65)
