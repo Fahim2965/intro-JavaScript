@@ -6,7 +6,7 @@ let digits = document.getElementById('digits')
 
 let interval;
 
-function START () {
+function start () {
     interval = setInterval(function () {
         milliseconds = milliseconds + 10
 
@@ -20,15 +20,20 @@ function START () {
             seconds = 0
         }
 
-        digits.innerHTML = String(minutes).padStart(2, '0') + ':' + String(seconds).padStart(2, '0') + ':' + milliseconds /
+        digits.innerHTML = String(minutes).padStart(2, '0') + ':' + String(seconds).padStart(2, '0') + ':' + milliseconds/10
 
     }, 10)
 }
 
-function STOP () {
-    alert("You clicked the STOP button")
+function stop () {
+    
 }
 
 function RESET () {
     alert("You clicked the RESET button")
 }
+
+
+
+
+
