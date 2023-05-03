@@ -12,12 +12,17 @@
     <h1>Stopwatch</h1>
     <hr>
     <h2 id="digits">00:00:00</h2>
+    <hr>
 
     <div class="buttons">
-    <button onclick="start()">START</button> 
+    <button onclick="start()" id="st">START</button> 
     <button onclick="stop()">STOP</button> 
     <button onclick="reset()">RESET</button> 
+    <button onclick="loop()" id="lp">LAP</button>
     </div>
+    <hr>
+    <h2>Laps</h2>
+    <ul id="Loop"></ul>
 
     <script src="stop-watch.js"></script>
 </body>

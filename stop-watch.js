@@ -3,10 +3,16 @@ let seconds = 0
 let minutes = 0
 
 let digits = document.getElementById('digits')
+let startButton = document.getElementById('st')
+let loopButton = document.getElementById('lp')
 
 let interval;
 
 function start () {
+
+startButton.disabled = true
+loopButton.disabled = false
+
     interval = setInterval(function () {
         milliseconds = milliseconds + 10
 
@@ -26,11 +32,20 @@ function start () {
 }
 
 function stop () {
-    
+    clearInterval(interval)
+    startButton.disabled = false
 }
 
-function RESET () {
-    alert("You clicked the RESET button")
+function reset () {
+    stop()
+    milliseconds = 0
+    seconds = 0
+    digits.innerHTML = '00:00:00'
+    laps.innerHTML = ""
+}
+
+function loop () {
+    
 }
 
 
