@@ -44,8 +44,13 @@ function reset () {
     laps.innerHTML = ""
 }
 
-function loop () {
-    
+function lap () {
+    const node = document.createElement("li");
+    const textnode = document.createElement("Water");
+    node.appendChild(textnode);
+    document.getElementById("Loop").appendChild(node);
+    let newListItem = document.createElement("li")
+    newListItem.textContent = minutes  = ':' + String(seconds).padStart(2, '0') + ':' + String(seconds).padStart(2, '0') + ':' + milliseconds/10
 }
 
 
