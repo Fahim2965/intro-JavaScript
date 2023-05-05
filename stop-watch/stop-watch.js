@@ -1,59 +1,55 @@
 let milliseconds = 0
 let seconds = 0
 let minutes = 0
-
-let digits = document.getElementById('digits')
-let startButton = document.getElementById('st')
-let loopButton = document.getElementById('lp')
-
+let digits = document.getElementById("digits")
 let interval;
+let lapList = document.getElementById("myList")
+let startButton = document.getElementById("startButton")
+let lapButton = document.getElementById("lapButton")
+lapButton.disabled = true
+
 
 function start () {
+    lapButton.disabled = false
+    startButton.disabled = true
 
-startButton.disabled = true
-loopButton.disabled = false
-
-    interval = setInterval(function () {
+    interval = setInterval(function() {
         milliseconds = milliseconds + 10
 
         if (milliseconds >= 1000) {
             seconds = seconds + 1
             milliseconds = 0
         }
-        
+
         if (seconds >= 60) {
-            minutes += 1
+            minutes = minutes + 1
             seconds = 0
         }
-
-        digits.innerHTML = String(minutes).padStart(2, '0') + ':' + String(seconds).padStart(2, '0') + ':' + milliseconds/10
-
-    }, 10)
+        console.log(minutes)
+        console.log(seconds)
+        console.log(milliseconds)
+        digits.innerHTML = String(minutes).padStart(2, "0") + ":" + String(seconds).padStart(2, "0") + ":" + milliseconds/10
+    }, 10);
 }
 
 function stop () {
-    clearInterval(interval)
+    lapButton.disabled = true
     startButton.disabled = false
+    clearInterval(interval)
 }
 
-function reset () {
+function restart () {
     stop()
     milliseconds = 0
     seconds = 0
-    digits.innerHTML = '00:00:00'
-    laps.innerHTML = ""
+    minutes = 0
+    digits.innerHTML = "00:00:00"
+    myList.innerHTML = ""
 }
 
 function lap () {
-    const node = document.createElement("li");
-    const textnode = document.createElement("Water");
-    node.appendChild(textnode);
-    document.getElementById("Loop").appendChild(node);
     let newListItem = document.createElement("li")
-    newListItem.textContent = minutes  = ':' + String(seconds).padStart(2, '0') + ':' + String(seconds).padStart(2, '0') + ':' + milliseconds/10
+    newListItem.textContent = digits.innerHTML = String(minutes).padStart(2, "0") + ":" + String(seconds).padStart(2, "0") + ":" + milliseconds/10
+ 
+    myList.appendChild(newListItem)
 }
-
-
-
-
-
